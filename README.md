@@ -199,10 +199,10 @@ foreach ($points as $point) {
     $point = new Point($point[0], $point[1]);
 }
 // WGS84(GPS坐标系)/GCJ02(火星坐标系)/BD09(百度坐标系)之间可以互相任意转换
-$translate = new \Jundayw\LocationBasedServices\Translate(WGS84::class, GCJ02::class);// GPS坐标系转火星坐标系
-$translate = new \Jundayw\LocationBasedServices\Translate(WGS84::class, BD09::class);// GPS坐标系转百度坐标系
-$translate = new \Jundayw\LocationBasedServices\Translate(BD09::class, GCJ02::class);// 百度坐标系转火星坐标系
-$translate = new \Jundayw\LocationBasedServices\Translate(BD09::class, WGS84::class);// 百度坐标系转GPS坐标系
+$translate = new Translate(WGS84::class, GCJ02::class);// GPS坐标系转火星坐标系
+$translate = new Translate(WGS84::class, BD09::class);// GPS坐标系转百度坐标系
+$translate = new Translate(BD09::class, GCJ02::class);// 百度坐标系转火星坐标系
+$translate = new Translate(BD09::class, WGS84::class);// 百度坐标系转GPS坐标系
 $point     = $translate->translate($point);// 转换后坐标
 ```
 
@@ -226,9 +226,9 @@ foreach ($points as $point) {
     $converter = new Converter($point[0], $point[1]);
 }
 // WGS84(GPS坐标系)/GCJ02(火星坐标系)/BD09(百度坐标系)之间可以互相任意转换
-$translate = new \Jundayw\LocationBasedServices\Translate(WGS84::class, GCJ02::class);// GPS坐标系转火星坐标系
-$translate = new \Jundayw\LocationBasedServices\Translate(WGS84::class, BD09::class);// GPS坐标系转百度坐标系
-$translate = new \Jundayw\LocationBasedServices\Translate(BD09::class, GCJ02::class);// 百度坐标系转火星坐标系
-$translate = new \Jundayw\LocationBasedServices\Translate(BD09::class, WGS84::class);// 百度坐标系转GPS坐标系
+$translate = new Translate(WGS84::class, GCJ02::class);// GPS坐标系转火星坐标系
+$translate = new Translate(WGS84::class, BD09::class);// GPS坐标系转百度坐标系
+$translate = new Translate(BD09::class, GCJ02::class);// 百度坐标系转火星坐标系
+$translate = new Translate(BD09::class, WGS84::class);// 百度坐标系转GPS坐标系
 $point     = $translate->translate($converter);// 转换后坐标
 ```
