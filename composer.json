@@ -1,0 +1,20 @@
+{
+    "name": "jundayw/location-based-services",
+    "description": "The PHP library for LBS transform coordinates",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jundayw",
+            "email": "jundayw@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jundayw\\LocationBasedServices\\": "src/"
+        }
+    }
+}
