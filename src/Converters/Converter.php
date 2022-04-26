@@ -7,7 +7,7 @@ use Jundayw\LocationBasedServices\Point\Point;
 class Converter extends Point
 {
     /**
-     * Point constructor.
+     * Converter constructor.
      * @param float|string|null $lng
      * @param float|string|null $lat
      */

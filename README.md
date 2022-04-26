@@ -23,6 +23,37 @@ composer require jundayw/location-based-services
 [![License](http://poser.pugx.org/jundayw/location-based-services/license)](https://packagist.org/packages/jundayw/location-based-services) 
 [![PHP Version Require](http://poser.pugx.org/jundayw/location-based-services/require/php)](https://packagist.org/packages/jundayw/location-based-services)
 
+# 方法集合
+
+ - AbstractPoint
+    - format(string $format = "d°m′s″label", bool $flip = false, int $decimals = 2): array
+    - parse(int $decimals = 2, bool $flip = false): array
+    - getLng(): float
+    - setLng(float $lng)
+    - getLat(): float
+    - setLat(float $lat)
+ - Point extends AbstractPoint
+ - Converter extends Point
+    - setLng($lng)
+    - setLat($lat)
+ - Position
+    - getDistance(AbstractPoint $start, AbstractPoint $end): float
+    - getDistanceUnit(AbstractPoint $start, AbstractPoint $end): string
+    - getCircle(): Circle
+    - setCircle(Circle $circle): Position
+    - getUnits(): Units
+    - setUnits(Units $units): Position
+    - getDecimals(): int
+    - setDecimals(int $decimals): Position
+ - Translate
+    - translate(AbstractPoint $point): AbstractPoint
+    - getInput(): string
+    - setInput(string $input): Translate
+    - getOutput(): string
+    - setOutput(string $output): Translate
+    - getRoutes(): array
+    - setRoutes(array $routes): Translate
+
 # 坐标计算
 
 ```
