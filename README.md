@@ -6,6 +6,12 @@
 composer require jundayw/location-based-services
 ```
 
+[![Latest Stable Version](http://poser.pugx.org/jundayw/location-based-services/v)](https://packagist.org/packages/jundayw/location-based-services) 
+[![Total Downloads](http://poser.pugx.org/jundayw/location-based-services/downloads)](https://packagist.org/packages/jundayw/location-based-services) 
+[![Latest Unstable Version](http://poser.pugx.org/jundayw/location-based-services/v/unstable)](https://packagist.org/packages/jundayw/location-based-services) 
+[![License](http://poser.pugx.org/jundayw/location-based-services/license)](https://packagist.org/packages/jundayw/location-based-services) 
+[![PHP Version Require](http://poser.pugx.org/jundayw/location-based-services/require/php)](https://packagist.org/packages/jundayw/location-based-services)
+
 # 坐标计算
 
 ```
