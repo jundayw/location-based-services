@@ -284,3 +284,41 @@ $translate = new Translate(BD09::class, GCJ02::class);// 百度坐标系转火�
 $translate = new Translate(BD09::class, WGS84::class);// 百度坐标系转GPS坐标系
 $point     = $translate->translate($converter);// 转换后坐标
 ```
+
+# 不同坐标系间距离计算
+
+## GPS 坐标系转百度坐标系计算距离
+
+```php
+$start     = new Point(106.0, 39.0);// GPS 坐标
+$end       = new Point(107.0, 40.0);// GPS 坐标
+$position  = new Position();
+$gps       = $position->getDistance($start, $end);
+$translate = new Translate(WGS84::class, BD09::class);
+$bd09      = $position->getDistance($translate->translate($start), $translate->translate($end));
+```
+中国区域距离结果：
+```php
+[
+    "gps"  => 140604.6,     // GPS 坐标系距离
+    "bd09" => 140673.57,    // 百度坐标系距离
+];
+```
+
+## GPS 坐标系转百度坐标系计算距离
+
+```php
+$start     = new Point(1.0, 39.0);// GPS 坐标
+$end       = new Point(1.0, 40.0);// GPS 坐标
+$position  = new Position();
+$gps       = $position->getDistance($start, $end);
+$translate = new Translate(WGS84::class, BD09::class);
+$bd09      = $position->getDistance($translate->translate($start), $translate->translate($end));
+```
+非中国区域距离结果：
+```php
+[
+    "gps"  => 111319.49,    // GPS 坐标系距离
+    "bd09" => 111319.49,    // 百度坐标系距离
+];
+```
