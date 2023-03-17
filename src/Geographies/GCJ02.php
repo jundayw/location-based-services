@@ -8,7 +8,7 @@ class GCJ02 extends Geography
      * @param float $max
      * @param float $min
      */
-    public function __construct(float $max = 6378245.0, float $min = 6356863.0188)
+    public function __construct(float $max = 6378245.0, float $min = 6356863.01877304)
     {
         $this->max = $max ?? $this->max;
         $this->min = $min ?? $this->min;
