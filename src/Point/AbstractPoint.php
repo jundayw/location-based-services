@@ -30,7 +30,7 @@ abstract class AbstractPoint
      * @param int $decimals
      * @return array
      */
-    public function format(string $format = "d°m′s″label", bool $flip = false, int $decimals = 2): array
+    public function format(string $format = "d°m′s″L", bool $flip = false, int $decimals = 2): array
     {
         $data = $this->parse($decimals, $flip);
         foreach ($data as &$items) {
@@ -62,7 +62,7 @@ abstract class AbstractPoint
                 "d"     => 1,
                 "m"     => 60,
                 "s"     => 60,
-                "label" => $itude >= 0 ? reset($label[$type]) : end($label[$type]),
+                "L" => $itude >= 0 ? reset($label[$type]) : end($label[$type]),
             ];
             foreach ($data as $key => $rate) {
                 if (in_array($key, ["d", "m", "s"]) == false) {

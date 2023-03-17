@@ -53,7 +53,7 @@ class PointTest extends TestCase
         return [
             [
                 new Point(90.979166666667, -20.754444444444),
-                ["d°m′s″label", false],
+                ["d°m′s″L", false],
                 [
                     "longitude" => "90°58′45″E",
                     "latitude"  => "20°45′16″S",
@@ -61,7 +61,7 @@ class PointTest extends TestCase
             ],
             [
                 new Converter(90.979166666667, -20.754444444444),
-                ["label d°m′s″", false],
+                ["L d°m′s″", false],
                 [
                     "longitude" => "E 90°58′45″",
                     "latitude"  => "S 20°45′16″",
@@ -69,7 +69,7 @@ class PointTest extends TestCase
             ],
             [
                 new Converter(90.979166666667, -20.754444444444),
-                ["labeld度m分s秒", true],
+                ["Ld度m分s秒", true],
                 [
                     "longitude" => "东经90度58分45秒",
                     "latitude"  => "南纬20度45分16秒",
@@ -93,7 +93,7 @@ class PointTest extends TestCase
             ],
             [
                 new Converter("东经90度58分45秒", "南纬20度45分16秒"),
-                ["d°m′s″label", false],
+                ["d°m′s″L", false],
                 [
                     "longitude" => "90°58′45″E",
                     "latitude"  => "20°45′16″S",

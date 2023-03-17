@@ -26,7 +26,7 @@ composer require jundayw/location-based-services
 # 方法集合
 
  - AbstractPoint
-    - format(string $format = "d°m′s″label", bool $flip = false, int $decimals = 2): array
+    - format(string $format = "d°m′s″L", bool $flip = false, int $decimals = 2): array
     - parse(int $decimals = 2, bool $flip = false): array
     - getLng(): float
     - setLng(float $lng)
@@ -149,7 +149,7 @@ array (
         'd' => 98,
         'm' => 58,
         's' => 45.8,
-        'label' => 'E',
+        'L' => 'E',
   ),
   'latitude' => array (
         'DDD' => -24.754472222222,
@@ -158,7 +158,7 @@ array (
         'd' => 24,
         'm' => 45,
         's' => 16.1,
-        'label' => 'S',
+        'L' => 'S',
   ),
 )
 ```
@@ -180,7 +180,7 @@ array (
         'd' => 98,
         'm' => 58,
         's' => 45.8,
-        'label' => '东经',
+        'L' => '东经',
   ),
   'latitude' => array (
         'DDD' => -24.754472222222,
@@ -189,21 +189,21 @@ array (
         'd' => 24,
         'm' => 45,
         's' => 16.1,
-        'label' => '南纬',
+        'L' => '南纬',
   ),
 )
 ```
 
 ## 坐标格式转换
 
-可根据具体需求转换需要的格式，支持标签：DDD、ddd、D、d、m、s、label。label中文情况下支持：东经、西经、北纬、南纬；英文情况下支持：E、W、N、S。
+可根据具体需求转换需要的格式，支持标签：DDD、ddd、D、d、m、s、L。L中文情况下支持：东经、西经、北纬、南纬；英文情况下支持：E、W、N、S。
 
 ### 中文标签
 
 ```php
 $point = new Point(98.979388888889, -24.754472222222);
 $point = new Converter("东经98度58分45.8秒", "南纬24度45分16.1秒");
-var_export($point->format("labeld度m分s秒", true));
+var_export($point->format("Ld度m分s秒", true));
 ```
 输出结果：
 ```php
