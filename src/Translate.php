@@ -43,7 +43,7 @@ class Translate
     public function translate(AbstractPoint $point): AbstractPoint
     {
         // 获取转化类全限定类名
-        $routes = array_map(function($route) {
+        $routes = array_map(function ($route) {
             return get_class($route);
         }, $this->routes);
         // 查找起始位置
@@ -55,7 +55,7 @@ class Translate
         // 基础坐标系到高级坐标系编码
         // 高级坐标系到基础坐标系解码
         $method = $input < $output ? "encode" : "decode";
-        $routes = array_filter($this->routes, function($v, $k) use ($input, $output) {
+        $routes = array_filter($this->routes, function ($v, $k) use ($input, $output) {
             if ($input < $output) {
                 return $k > $input && $k <= $output;
             }

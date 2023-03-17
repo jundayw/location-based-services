@@ -50,19 +50,19 @@ abstract class AbstractPoint
      */
     public function parse(int $decimals = 2, bool $flip = false): array
     {
-        $parse = function($itude, $type) use ($decimals, $flip) {
+        $parse = function ($itude, $type) use ($decimals, $flip) {
             $label = [
                 "longitude" => array_slice($flip ? array_flip($this->getLabelsLatitudeLongitude()) : $this->getLabelsLatitudeLongitude(), 0, 2),
                 "latitude"  => array_slice($flip ? array_flip($this->getLabelsLatitudeLongitude()) : $this->getLabelsLatitudeLongitude(), 2, 2),
             ];
             $data  = [
-                "DDD"   => $itude,
-                "ddd"   => abs($itude),
-                "D"     => intval($itude),
-                "d"     => 1,
-                "m"     => 60,
-                "s"     => 60,
-                "L" => $itude >= 0 ? reset($label[$type]) : end($label[$type]),
+                "DDD" => $itude,
+                "ddd" => abs($itude),
+                "D"   => intval($itude),
+                "d"   => 1,
+                "m"   => 60,
+                "s"   => 60,
+                "L"   => $itude >= 0 ? reset($label[$type]) : end($label[$type]),
             ];
             foreach ($data as $key => $rate) {
                 if (in_array($key, ["d", "m", "s"]) == false) {

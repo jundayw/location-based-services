@@ -11,10 +11,10 @@ namespace Jundayw\LocationBasedServices\Geographies;
 abstract class Geography
 {
     protected $x_pi = M_PI * 3000.0 / 180;
-    protected $pi   = M_PI;// π
-    protected $max  = 6378137.0;// 椭球体长半轴
+    protected $pi   = M_PI;        // π
+    protected $max  = 6378137.0;   // 椭球体长半轴
     protected $min  = 6356752.3142;// 椭球体短半轴
-    protected $ee   = 0.0;// 椭圆的第一扁心率平方
+    protected $ee   = 0.0;         // 椭圆的第一扁心率平方
 
     /**
      * @param float $longitude

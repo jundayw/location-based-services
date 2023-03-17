@@ -17,26 +17,26 @@
 composer require jundayw/location-based-services
 ```
 
-[![Latest Stable Version](http://poser.pugx.org/jundayw/location-based-services/v)](https://packagist.org/packages/jundayw/location-based-services) 
-[![Total Downloads](http://poser.pugx.org/jundayw/location-based-services/downloads)](https://packagist.org/packages/jundayw/location-based-services) 
-[![Latest Unstable Version](http://poser.pugx.org/jundayw/location-based-services/v/unstable)](https://packagist.org/packages/jundayw/location-based-services) 
-[![License](http://poser.pugx.org/jundayw/location-based-services/license)](https://packagist.org/packages/jundayw/location-based-services) 
+[![Latest Stable Version](http://poser.pugx.org/jundayw/location-based-services/v)](https://packagist.org/packages/jundayw/location-based-services)
+[![Total Downloads](http://poser.pugx.org/jundayw/location-based-services/downloads)](https://packagist.org/packages/jundayw/location-based-services)
+[![Latest Unstable Version](http://poser.pugx.org/jundayw/location-based-services/v/unstable)](https://packagist.org/packages/jundayw/location-based-services)
+[![License](http://poser.pugx.org/jundayw/location-based-services/license)](https://packagist.org/packages/jundayw/location-based-services)
 [![PHP Version Require](http://poser.pugx.org/jundayw/location-based-services/require/php)](https://packagist.org/packages/jundayw/location-based-services)
 
 # 方法集合
 
- - AbstractPoint
+- AbstractPoint
     - format(string $format = "d°m′s″L", bool $flip = false, int $decimals = 2): array
     - parse(int $decimals = 2, bool $flip = false): array
     - getLng(): float
     - setLng(float $lng)
     - getLat(): float
     - setLat(float $lat)
- - Point extends AbstractPoint
- - Converter extends Point
+- Point extends AbstractPoint
+- Converter extends Point
     - setLng($lng)
     - setLat($lat)
- - Position
+- Position
     - getDistance(AbstractPoint $start, AbstractPoint $end): float
     - getDistanceUnit(AbstractPoint $start, AbstractPoint $end): string
     - getCircle(): Circle
@@ -45,7 +45,7 @@ composer require jundayw/location-based-services
     - setUnits(Units $units): Position
     - getDecimals(): int
     - setDecimals(int $decimals): Position
- - Translate
+- Translate
     - translate(AbstractPoint $point): AbstractPoint
     - getInput(): string
     - setInput(string $input): Translate
@@ -139,7 +139,9 @@ $point = new Point(98.979388888889, -24.754472222222);
 $point = new Converter("东经98度58分45.8秒", "南纬24度45分16.1秒");
 var_dump($point->parse());
 ```
+
 输出结果：
+
 ```php
 array (
   'longitude' => array (
@@ -170,7 +172,9 @@ $point = new Point(98.979388888889, -24.754472222222);
 $point = new Converter("东经98度58分45.8秒", "南纬24度45分16.1秒");
 var_dump($point->parse(2, true));
 ```
+
 输出结果：
+
 ```php
 array (
   'longitude' => array (
@@ -205,7 +209,9 @@ $point = new Point(98.979388888889, -24.754472222222);
 $point = new Converter("东经98度58分45.8秒", "南纬24度45分16.1秒");
 var_export($point->format("Ld度m分s秒", true));
 ```
+
 输出结果：
+
 ```php
 array (
   'longitude' => '东经98度58分45.8秒',
@@ -220,7 +226,9 @@ $point = new Point(98.979388888889, -24.754472222222);
 $point = new Converter("东经98度58分45.8秒", "南纬24度45分16.1秒");
 var_export($point->format());
 ```
+
 输出结果：
+
 ```php
 array (
   'longitude' => '98°58′45.8″E',
@@ -297,7 +305,9 @@ $gps       = $position->getDistance($start, $end);
 $translate = new Translate(WGS84::class, BD09::class);
 $bd09      = $position->getDistance($translate->translate($start), $translate->translate($end));
 ```
+
 中国区域距离结果：
+
 ```php
 [
     "gps"  => 140604.6,     // GPS 坐标系距离
@@ -315,7 +325,9 @@ $gps       = $position->getDistance($start, $end);
 $translate = new Translate(WGS84::class, BD09::class);
 $bd09      = $position->getDistance($translate->translate($start), $translate->translate($end));
 ```
+
 非中国区域距离结果：
+
 ```php
 [
     "gps"  => 111319.49,    // GPS 坐标系距离
