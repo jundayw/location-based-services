@@ -16,5 +16,10 @@
         "psr-4": {
             "Jundayw\\LocationBasedServices\\": "src/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "3.x-dev"
+        }
     }
 }
